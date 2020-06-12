@@ -30,7 +30,14 @@ namespace Tasks
             });
 
             Parent.Start();
+            Console.WriteLine("i dont know when Task finished");
+
             Parent.Wait(1000);
+            Console.WriteLine("Parent Task finished");
+            Parent.Wait();
+
+            Console.WriteLine("Parent Task finally finished");
+
             Console.ReadLine();
         }
     }
