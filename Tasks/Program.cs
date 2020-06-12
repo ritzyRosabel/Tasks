@@ -16,27 +16,22 @@ namespace Tasks
             //wait
             //cancel
             //have a child task
-            Task Parent = new Task(() =>
+            Task t = new Task(() =>
             {
-                Task Child = new Task(() =>
-                {
-                    System.Threading.Thread.Sleep(5000);
-                    Console.WriteLine("finished  sleep");
-                });
-                Child.Start();
-                Child.Wait();
-                System.Threading.Thread.Sleep(2000);
+
+                System.Threading.Thread.Sleep(5000);
+
                 Console.WriteLine("Child Task finished");
             });
+            Console.WriteLine(t.Status);
 
-            Parent.Start();
-            Console.WriteLine("i dont know when Task finished");
+            t.Start();
+            Console.WriteLine(t.Status);
 
-            Parent.Wait(1000);
-            Console.WriteLine("Parent Task finished");
-            Parent.Wait();
+            t.Wait();
+            Console.WriteLine(t.Status);
+            Console.WriteLine("End Of Main");
 
-            Console.WriteLine("Parent Task finally finished");
 
             Console.ReadLine();
         }
