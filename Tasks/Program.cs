@@ -28,6 +28,10 @@ namespace Tasks
                 System.Threading.Thread.Sleep(2000);
                 Console.WriteLine("Child Task finished");
             });
+
+            Parent.Start();
+            Parent.Wait(1000);
+            Console.ReadLine();
         }
     }
 }
