@@ -23,15 +23,19 @@ namespace Tasks
 
                 Console.WriteLine("Child Task finished");
             });
-            Console.WriteLine(t.Status);
 
             t.Start();
-            Console.WriteLine(t.Status);
-
-            t.Wait();
+            Console.WriteLine("Cancelled:- "+t.IsCanceled);
+            Console.WriteLine("Cancelled:- "+t.IsCompleted);
+            Console.WriteLine("Cancelled:- "+t.IsFaulted);
             Console.WriteLine(t.Status);
             Console.WriteLine("End Of Main");
-
+             //Cancelled:- False
+            // Cancelled: -False
+            //Cancelled: -False
+            //Running
+            //End Of Main
+            //Child Task finished
 
             Console.ReadLine();
         }
