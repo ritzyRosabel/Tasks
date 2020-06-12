@@ -21,7 +21,12 @@ namespace Tasks
                 Task Child = new Task(() =>
                 {
                     System.Threading.Thread.Sleep(5000);
+                    Console.WriteLine("finished  sleep");
                 });
+                Child.Start();
+                Child.Wait();
+                System.Threading.Thread.Sleep(2000);
+                Console.WriteLine("Child Task finished");
             });
         }
     }
