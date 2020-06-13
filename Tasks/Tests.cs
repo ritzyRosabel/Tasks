@@ -10,20 +10,34 @@ namespace Tasks
     {
         // task property delay 
 
-       
+
         public Task ShowAsync()
         {
-          return Task.Run(() =>
-          {
-               Task.Delay(2000);
-               throw new Exception("my own exception");
-          });
+            return Task.Run(() =>
+            {
+                try
+                {
+                    Task.Delay(2000);
+                    throw new Exception("my own exception");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return null;
+                }
+            });
         }
-        
+
         public async void Call()
         {
-            // you cannot use the await keyword on a void asynchronous method
-            await ShowAsync();
+            try
+            {
+                await ShowAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
