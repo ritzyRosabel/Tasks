@@ -41,6 +41,7 @@ namespace Tasks
         }
         //my own exception
         //A task was canceled.
+        // when an aSYNCHRONOUS METHOD FAILS TO RUN A TASK IT THROWS A task was canceled exception so its good to put a try catch in the callers method to handle that exception
 
     }
 }
