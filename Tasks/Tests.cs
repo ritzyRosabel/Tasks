@@ -15,10 +15,14 @@ namespace Tasks
         {
             return Task.Run(() =>
             {
+
                 try
                 {
                     Task.Delay(2000);
                     throw new Exception("my own exception");
+
+                    Console.WriteLine("finished the delay");
+
                 }
                 catch (Exception ex)
                 {
@@ -42,6 +46,7 @@ namespace Tasks
         //my own exception
         //A task was canceled.
         // when an aSYNCHRONOUS METHOD FAILS TO RUN A TASK IT THROWS A task was canceled exception so its good to put a try catch in the callers method to handle that exception
+        //can we wrapping only the method call of the Task method handle task exception?
 
     }
 }
