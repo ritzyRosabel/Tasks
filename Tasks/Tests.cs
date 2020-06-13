@@ -37,8 +37,9 @@ namespace Tasks
         //my own exception
         //A task was canceled.
         // when an aSYNCHRONOUS METHOD FAILS TO RUN A TASK IT THROWS A task was canceled exception so its good to put a try catch in the callers method to handle that exception
-        //can we wrapping only the method call of the Task method handle task exception?
+        //can wrapping only the method call of the Task method handle task exception?
         //answer System.Exception: 'my own exception' unhandled exceptiom, if the exception occurs within the task 
+        // however, if the exception occurs outside the task the exxception is handled by the try catch the caller method implemented
 
     }
 }
