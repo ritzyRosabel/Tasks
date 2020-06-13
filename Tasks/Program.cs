@@ -10,10 +10,15 @@ namespace Tasks
     {
         static void Main(string[] args)
         {
-            Tests t = new Tests();
-             t.Call();
-
+            //Tests t = new Tests();
+            // t.Call();
+            Task.Run(() => { throw new Exception("my exception"); });
+            Task.Run(() => { Console.WriteLine("Executing second task"); });
+            Task.Run(() => { Console.WriteLine("Executing third task"); });
+            Task.Run(() => { Console.WriteLine("Executing fourth task"); });
             Console.ReadLine();
+            // pop quiz
+            // if a task from a list of tasks throws an exception, does the program continue to run the other tasks after it? does the program exit?
         }
     }
 }

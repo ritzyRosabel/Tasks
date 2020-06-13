@@ -42,6 +42,7 @@ namespace Tasks
         //answer System.Exception: 'my own exception' unhandled exceptiom, if the exception occurs within the task 
         // however, if the exception occurs outside the task the exxception is handled by the try catch the caller method implemented
         // my own exception
+        // can 
 
     }
 }
