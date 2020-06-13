@@ -9,10 +9,21 @@ namespace Tasks
     class Tests
     {
         // task property delay 
-        Task t = new Task(() =>
-        {
-            Task.Delay(2000);
 
-        });
+       
+        public Task ShowAsync()
+        {
+          return Task.Run(() =>
+          {
+               Task.Delay(2000);
+               throw new Exception("my own exception");
+          });
+        }
+        
+        public async void Call()
+        {
+            // you cannot use the await keyword on a void asynchronous method
+            await ShowAsync();
+        }
     }
 }
