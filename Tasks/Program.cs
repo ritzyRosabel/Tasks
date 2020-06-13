@@ -11,14 +11,7 @@ namespace Tasks
         static void Main(string[] args)
         {
             Tests t = new Tests();
-            try
-            {
-                      t.Call();
-            }catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-
-            }
+             t.Call();
 
             Console.ReadLine();
         }
