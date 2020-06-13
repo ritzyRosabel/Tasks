@@ -13,11 +13,12 @@ namespace Tasks
 
         public Task ShowAsync()
         {
+            throw new Exception("my own exception");
+
             return Task.Run(() =>
             {
 
                     Task.Delay(2000);
-                    throw new Exception("my own exception");
 
               
             });
@@ -40,6 +41,7 @@ namespace Tasks
         //can wrapping only the method call of the Task method handle task exception?
         //answer System.Exception: 'my own exception' unhandled exceptiom, if the exception occurs within the task 
         // however, if the exception occurs outside the task the exxception is handled by the try catch the caller method implemented
+        // my own exception
 
     }
 }
