@@ -9,7 +9,11 @@ namespace Tasks
 {
     class TaskAsTypeInAsyncMethod
     {
-    
+        public static async Task ExecuteAsync( )
+        {
+            await foreach(var number in GetSequence()) { }
+
+        }
         public static async IAsyncEnumerable<SquareNumber> GetSequence()
         {
             for(int i=1; i<=10; i++)
