@@ -12,23 +12,8 @@ namespace Tasks
 
 Task response;
         public Task ShowAsync()
-        {
-            
-            try
-            {
-                throw new Exception("my own exception");
-                response = Task.Run(() => { });
-                response = Task.Run(() => { Console.WriteLine("Executing second task"); });
-                response = Task.Run(() => { Console.WriteLine("Executing third task"); });
-                response = Task.Run(() => { Console.WriteLine("Executing fourth task"); });
-                return response;
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return null;
-            }
-           
+        { 
+               return  Task.Run(() => { Console.WriteLine("Executing fourth task"); }); 
         }
 
         public async void Call()
