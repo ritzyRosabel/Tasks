@@ -10,24 +10,32 @@ namespace Tasks
     {
         // task property delay 
 
-
+Task response;
         public Task ShowAsync()
         {
-            throw new Exception("my own exception");
-
-            return Task.Run(() =>
+            
+            try
             {
-
-                    Task.Delay(2000);
-
-              
-            });
+                throw new Exception("my own exception");
+                response = Task.Run(() => { });
+                response = Task.Run(() => { Console.WriteLine("Executing second task"); });
+                response = Task.Run(() => { Console.WriteLine("Executing third task"); });
+                response = Task.Run(() => { Console.WriteLine("Executing fourth task"); });
+                return response;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+           
         }
 
         public async void Call()
         {
             try
             {
+              
                 await ShowAsync();
             }
             catch (Exception ex)
