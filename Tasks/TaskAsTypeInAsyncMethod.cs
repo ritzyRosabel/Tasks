@@ -11,7 +11,10 @@ namespace Tasks
     {
         public static async Task ExecuteAsync( )
         {
-            await foreach(var number in GetSequence()) { }
+            await foreach(var number in GetSequence())
+            {
+                Console.WriteLine($"the square  of{number.Number} is : {number.Square}");
+            }
 
         }
         public static async IAsyncEnumerable<SquareNumber> GetSequence()
